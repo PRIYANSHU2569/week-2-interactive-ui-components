@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible, responsive FAQ accordion built with HTML, CSS, and vanilla JavaScript.">
+  <title>Interactive FAQ Accordion</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="faq-card" aria-labelledby="page-title">
+      <p class="eyebrow">HELP CENTER</p>
+      <h1 id="page-title">Frequently Asked Questions</h1>
+      <p class="intro">Quick answers to common questions. Select a question to read its answer.</p>
+
+      <div class="faq-list" id="faq-list">
+        <article class="faq-item">
+          <h2 class="faq-heading">
+            <button class="faq-trigger" id="faq-button-1" type="button"
+              aria-expanded="false" aria-controls="faq-panel-1">
+              <span>What is an FAQ accordion?</span><span class="chevron" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-button-1" hidden>
+            <p>An FAQ accordion organizes questions and answers in a compact list. Users open a question to reveal its answer without leaving the page.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h2 class="faq-heading">
+            <button class="faq-trigger" id="faq-button-2" type="button"
+              aria-expanded="false" aria-controls="faq-panel-2">
+              <span>Which technologies are used?</span><span class="chevron" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-button-2" hidden>
+            <p>The component uses semantic HTML for structure, CSS for responsive styling and transitions, and vanilla JavaScript for interaction. No framework or external library is required.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h2 class="faq-heading">
+            <button class="faq-trigger" id="faq-button-3" type="button"
+              aria-expanded="false" aria-controls="faq-panel-3">
+              <span>Is the component keyboard accessible?</span><span class="chevron" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-button-3" hidden>
+            <p>Yes. Each question is a native button, so users can reach it with Tab and activate it with Enter or Space. The expanded state is communicated with aria-expanded.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h2 class="faq-heading">
+            <button class="faq-trigger" id="faq-button-4" type="button"
+              aria-expanded="false" aria-controls="faq-panel-4">
+              <span>Does it work on mobile screens?</span><span class="chevron" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-button-4" hidden>
+            <p>Yes. The layout uses flexible widths, readable spacing, and a small-screen media query so the content remains usable on phones, tablets, and desktops.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h2 class="faq-heading">
+            <button class="faq-trigger" id="faq-button-5" type="button"
+              aria-expanded="false" aria-controls="faq-panel-5">
+              <span>How can I add more questions?</span><span class="chevron" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-button-5" hidden>
+            <p>Duplicate an faq-item block, give the button and panel unique matching IDs, and update aria-controls and aria-labelledby. The JavaScript automatically handles all items inside the FAQ list.</p>
+          </div>
+        </article>
+      </div>
+      <p class="status" id="faq-status" aria-live="polite">All questions are closed.</p>
+      <noscript><p class="fallback">JavaScript is disabled. The FAQ answers are unavailable in interactive mode. Enable JavaScript to expand questions.</p></noscript>
+    </section>
+    <footer>Built with HTML, CSS and vanilla JavaScript</footer>
+  </main>
+</body>
+</html>
